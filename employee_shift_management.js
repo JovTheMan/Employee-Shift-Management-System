@@ -63,3 +63,23 @@ function assignShift(employeeName, day, hours) {
 // Example usage of assignShift
 console.log("Assigning new shift:");
 assignShift('John', 'Thursday', 5);
+
+// Task 4: Create a Function to Calculate Total Hours Worked
+function calculateTotalHours(employeeName) {
+    // Find the employee by name
+    const employee = employees.find(emp => emp.name === employeeName);
+    
+    if (employee) {
+        // Sum up the hours of all shifts
+        const totalHours = employee.shifts.reduce((total, shift) => total + shift.hours, 0);
+        console.log(`${employeeName} has worked a total of ${totalHours} hours this week.`);
+        return totalHours;
+    } else {
+        console.log(`Error: Employee ${employeeName} not found.`);
+        return 0;
+    }
+}
+
+// Example usage of calculateTotalHours
+console.log("Calculating total hours worked:");
+calculateTotalHours('Sara');

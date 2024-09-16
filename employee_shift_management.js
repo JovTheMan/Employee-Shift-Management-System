@@ -27,3 +27,15 @@ const employees = [
         ]
     }
 ];
+
+// Task 2: Create a Function to Display Employee Shift Details
+function displayEmployeeShifts(employee) {
+    console.log(`Employee: ${employee.name}`);
+    employee.shifts.forEach(shift => {
+        console.log(`Day: ${shift.day}, Hours Worked: ${shift.hours}`);
+    });
+}
+
+// Example usage of displayEmployeeShifts
+console.log("Displaying Employee Shifts:");
+displayEmployeeShifts(employees[0]);
